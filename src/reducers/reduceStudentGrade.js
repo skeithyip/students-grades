@@ -1,3 +1,8 @@
+const formatter = new Intl.NumberFormat('en-US', {
+  minimumFractionDigits: 1,
+  maximumFractionDigits: 1,
+});
+
 const reduce = (data) => {
   return data.reduce(
     (acc, e) => {
@@ -13,7 +18,7 @@ const reduce = (data) => {
         e.course_id,
       ];
       const totalGp = (acc.grades[e.student_id].totalGp || 0) + e.course_grade;
-      const gpa = totalGp / courseIds.length;
+      const gpa = formatter.format(totalGp / courseIds.length);
 
       acc.ids = ids.sort();
       acc.grades[e.student_id] = {
