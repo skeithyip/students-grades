@@ -15,6 +15,7 @@ export const fetchGrades = createAsyncThunk(
     const id = setTimeout(() => {
       controller.abort();
       if (thunkAPI.getState().retry < 2) {
+        dispatch(studentGradeSlice.actions.retry());
         dispatch(fetchGrades());
       }
     }, TIMEOUT);
@@ -27,11 +28,13 @@ export const fetchGrades = createAsyncThunk(
 
       return body;
     } catch (err) {
-      if (!signal.aborted) {
-        if (thunkAPI.getState().retry < 2) {
-          dispatch(fetchGrades());
-        }
+      if (thunkAPI.getState().retry < 2) {
+        dispatch(studentGradeSlice.actions.retry());
+        dispatch(fetchGrades());
+
+        return thunkAPI.rejectWithValue({ retrying: true });
       }
+
       throw err;
     }
   }
@@ -45,7 +48,12 @@ export const studentGradeSlice = createSlice({
     error: null,
     retry: 0,
   },
-  reducers: {},
+  reducers: {
+    retry(state) {
+      state.status = 'loading';
+      state.retry++;
+    },
+  },
   extraReducers(builder) {
     builder
       .addCase(fetchGrades.pending, (state) => {
@@ -58,7 +66,9 @@ export const studentGradeSlice = createSlice({
         state.retry = 0;
       })
       .addCase(fetchGrades.rejected, (state, action) => {
-        if (state.retry < 2) {
+        if (action.payload.retrying) {
+          state.status = 'loading';
+        } else if (state.retry < 2) {
           state.status = 'loading';
           state.retry++;
         } else {
