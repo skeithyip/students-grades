@@ -1,0 +1,24 @@
+{
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "plugin:jest/recommended",
+    "plugin:jest/style"
+  ],
+  "rules": {
+    "no-console": "warn",
+    "no-debugger": "warn",
+    "jest/consistent-test-it": [
+      "warn",
+      {
+        "withinDescribe": "test"
+      }
+    ],
+    "jest/expect-expect": "off",
+    "jest/no-commented-out-tests": "off",
+    "jest/no-disabled-tests": "off",
+    "jest/no-standalone-expect": "off",
+    "jest/no-test-return-statement": "warn",
+    "jest/require-top-level-describe": "warn"
+  }
+}
