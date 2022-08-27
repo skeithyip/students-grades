@@ -1,5 +1,6 @@
-import './App.css';
 import GradeTracker from './components/GradeTracker';
+
+import './App.css';
 
 function App() {
   return (
