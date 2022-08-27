@@ -2,7 +2,6 @@ import * as React from 'react';
 import { useDispatch } from 'react-redux';
 
 import GradeContainer from './GradeContainer';
-// import styled from 'styled-components';
 
 import { fetchGrades } from 'slices/studentGradeSlice';
 
@@ -14,7 +13,7 @@ function GradeTracker() {
   }, [dispatch]);
 
   return (
-    <div className="GradeTracker">
+    <div className="grade-tracker-container">
       <GradeContainer />
     </div>
   );

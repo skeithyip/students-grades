@@ -1,0 +1,26 @@
+body {
+  background-color: rgb(241, 241, 241);
+}
+
+div.grade-tracker-app {
+  max-width: 878px;
+  margin: 0 auto;
+
+  @media (max-width: 900px) {
+    max-width: 654px;
+  }
+  @media (max-width: 600px) {
+    max-width: 429px;
+  }
+
+  > h1.header {
+    text-align: center;
+  }
+
+  > div.grade-tracker-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
+  }
+}
