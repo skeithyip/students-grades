@@ -1,0 +1,62 @@
+[
+  {
+    "student_id": "1902004",
+    "course_id": "CS101",
+    "course_year": "2021",
+    "course_grade": 2.2
+  },
+  {
+    "student_id": "1902003",
+    "course_id": "CS102",
+    "course_year": "2021",
+    "course_grade": 5.0
+  },
+  {
+    "student_id": "1902003",
+    "course_id": "CS104",
+    "course_year": "2021",
+    "course_grade": 2.2
+  },
+  {
+    "student_id": "1902001",
+    "course_id": "CS101",
+    "course_year": "2021",
+    "course_grade": 2.0
+  },
+  {
+    "student_id": "1902001",
+    "course_id": "CS203",
+    "course_year": "2021",
+    "course_grade": 2.0
+  },
+  {
+    "student_id": "1902001",
+    "course_id": "CS101",
+    "course_year": "2021",
+    "course_grade": 2.0
+  },
+  {
+    "student_id": "1902002",
+    "course_id": "CS101",
+    "course_year": "2021",
+    "course_grade": 5.0
+  },
+  {
+    "student_id": "1902002",
+    "course_id": "CS101",
+    "course_year": "2021",
+    "course_grade": 5.0
+  },
+  {
+    "student_id": "1902003",
+    "course_id": "CS101",
+    "course_year": "2021",
+    "course_grade": 2.0
+  },
+  {
+    "student_id": "1902003",
+    "course_id": "CS101",
+    "course_year": "2021",
+    "course_grade": 2.0
+  }
+]
